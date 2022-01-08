@@ -11,6 +11,7 @@ type HistoryItemType = {time: string; record: string}
 const Debounce = (): React.ReactElement => {
     const [debounceInputHistory, setDebounceInputHistory] =  useState<HistoryItemType[]>([])
     const [activeHistory, setActiveHistory] = useState<string>('');
+    const [timeout, setTimeout] = useState<number>(1)
     const [debounceHistory, setDebounceHistoryDispatcher] = useReducer((state: HistoryItemType[], newDebounceHistory: HistoryItemType): HistoryItemType[]  => {
         if (
             debounceInputHistory.length === 0 ||
@@ -23,8 +24,8 @@ const Debounce = (): React.ReactElement => {
     const debounceHandle = useCallback(
         debounce(() => {
             setDebounceHistoryDispatcher({time: getTimeFormat(), record: inputEl.current?.value as string})
-        }, 1000)
-        , [])
+        }, timeout * 1000)
+        , [timeout])
 
     const handleDebounceInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setDebounceInputHistory(() => {
@@ -51,12 +52,24 @@ const Debounce = (): React.ReactElement => {
         </>
     )}
 
-
+    const OptionRender = (): React.ReactElement => {
+        const options = [0.1, 0.5, 1, 2, 3, 4, 5, 6]
+        return <>
+            <label>间隔时长:</label>
+            <select
+                value={timeout}
+                onChange={(e) => { setTimeout( Number(e.target.value))} }
+            >
+                {options.map((i) => <option value={i} key={i}>{i}秒</option>)}
+            </select>
+        </>
+    }
 
     return (
         <div className={styles.main}>
             <div className={styles.container}>
                 <div className={styles.inputWrapper}>
+                    <OptionRender />
                     <label>防抖输入:</label>
                   <input onChange={handleDebounceInputChange} ref={inputEl}
                          placeholder='请输入点什么'
