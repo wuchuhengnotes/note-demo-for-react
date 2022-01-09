@@ -4,10 +4,14 @@ import Layout from "../container/Layout";
 import Debounce from "../pages/Debounce/Debounce";
 import Throttling from "../pages/Throttling";
 import UseCallbackDemo from "../pages/UseCallbackDemo";
+import MemoDemo from "../pages/MemoDemo";
+import UseMemoDemo from "../pages/UseMemoDemo";
 
 const Routes = (): React.ReactElement => {
     const res = useRoutes([
         { path: '/UseCallbackDemo', element: <UseCallbackDemo/>  },
+        { path: '/memoDemo', element: <MemoDemo/>  },
+        { path: '/useMemoDemo', element: <UseMemoDemo/>  },
         {
             path: '/', element: <Layout />, children: [
                 {path: 'debounce', element: <Debounce/>},
