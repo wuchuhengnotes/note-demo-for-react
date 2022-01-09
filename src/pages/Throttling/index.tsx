@@ -4,7 +4,7 @@ import styles from '../Debounce/styles.module.scss';
 import CompareLogRender, {HistoryItemType} from "../../component/CompareLogRender";
 import InputForDebounceAndThrottlingRender from "../../component/InputForDecounceAndThrottlingRender";
 
-const Debounce = (): React.ReactElement => {
+const Throttling = (): React.ReactElement => {
     const [throttlingInputHistory, setThrottlingInputHistory] =  useState<HistoryItemType[]>([])
     const [timer, setTimer] = useState<number>(1)
     const [debounceHistory, setDebounceHistoryDispatcher] = useReducer((state: HistoryItemType[]): HistoryItemType[]  => {
@@ -42,4 +42,4 @@ const Debounce = (): React.ReactElement => {
     );
 }
 
-export default Debounce;
+export default Throttling;
