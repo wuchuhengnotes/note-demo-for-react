@@ -1,5 +1,3 @@
-import {ftruncate} from "fs";
-
 type DebounceFunType  = () => void
 type DebounceWaitType  = number
 
