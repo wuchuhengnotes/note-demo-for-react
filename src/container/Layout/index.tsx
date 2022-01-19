@@ -12,7 +12,9 @@ const Layout = (): React.ReactElement => {
                 <Link to="/">首页</Link>
                 <Link to="/debounce">防抖示例</Link>
                 <Link to="/throttling">节流示例</Link>
+                <Link to="/customRedux">自定义redux</Link>
             </nav>
+            <br/>
             <Outlet />
         </main>
     )

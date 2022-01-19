@@ -6,6 +6,7 @@ import Throttling from "../pages/Throttling";
 import UseCallbackDemo from "../pages/UseCallbackDemo";
 import MemoDemo from "../pages/MemoDemo";
 import UseMemoDemo from "../pages/UseMemoDemo";
+import CustomRedux from "../pages/CustomRedux";
 
 const Routes = (): React.ReactElement => {
     const res = useRoutes([
@@ -15,7 +16,8 @@ const Routes = (): React.ReactElement => {
         {
             path: '/', element: <Layout />, children: [
                 {path: 'debounce', element: <Debounce/>},
-                {path: 'throttling', element: <Throttling />}
+                {path: 'throttling', element: <Throttling />},
+                {path: 'customRedux', element: <CustomRedux />}
             ]
         },
 

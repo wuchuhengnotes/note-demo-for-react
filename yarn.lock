@@ -2052,6 +2052,13 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
+"@wuchuheng/rxjs@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@wuchuheng/rxjs/-/rxjs-1.0.2.tgz#c648f6882ece9f9ec6bb5ad334b2bfbe2b387e1c"
+  integrity sha512-ZyhIXAGz9qjppogTzMVyLLWCrP4p2ehi687IOAW9JgHkasdJeXKdBrENz1lq3JzYyiWovQQ5tiE37VJZ0OFyow==
+  dependencies:
+    react "^17.0.2"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/@xtuc/ieee754/download/@xtuc/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
